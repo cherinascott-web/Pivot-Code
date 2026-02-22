@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Week Five Project</title>
+
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <h1>Hello Cherina 👋</h1>
+  <button onclick="sayHi()">Click Me</button>
+
+
+  <script src="HWFEB19index.html"></script>
+  <!DOCTYPE html>
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Homework Project</title>
+
+    <style>
+      /* Center page using Flexbox */
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f2f2f2;
+        font-family: Arial, sans-serif;
+      }
+
+      /* Card / Container */
+      .card {
+        background-color: white;
+        padding: 25px;
+        /* Padding */
+        border-radius: 15px;
+        /* Rounded corners */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        /* Shadow */
+        text-align: center;
+        width: 300px;
+      }
+
+      /* Buttons */
+      button {
+        background-color: #4CAF50;
+        /* Button color */
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        margin: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+
+      button:hover {
+        background-color: #45a049;
+      }
+
+      input {
+        padding: 8px;
+        margin: 5px;
+        width: 90%;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <div class="card">
+
+      <h2>My JS Homework</h2>
+
+      <!-- 2 Fields -->
+      <input type="text" id="nameInput" placeholder="Enter your name">
+      <input type="number" id="ageInput" placeholder="Enter your age">
+
+      <br><br>
+
+      <!-- 2 Buttons with onclick -->
+      <button onclick="sayHello()">Say Hello</button>
+      <button onclick="showAge()">Show Age</button>
+
+    </div>
+
+    <script>
+
+      /* const variable */
+      const schoolName = "My Coding Class";
+
+      /* let variable (will be changed later) */
+      let clickCount = 0;
+
+      console.log("Page loaded! Welcome to " + schoolName);
+
+      /* Function 1 */
+      function sayHello() {
+
+        clickCount = clickCount + 1; // reassign let variable
+
+        let name = document.getElementById("nameInput").value;
+
+        console.log("Hello button clicked " + clickCount + " times");
+
+        alert("Hello " + name + "! Welcome to " + schoolName);
+      }
+
+      /* Function 2 */
+      function showAge() {
+
+        clickCount = clickCount + 1; // reassign again
+
+        let age = document.getElementById("ageInput").value;
+
+        console.log("Age button clicked " + clickCount + " times");
+
+        alert("You are " + age + " years old!");
+      }
+
+    </script>
+
+
+  </body>
+
+  </html>
