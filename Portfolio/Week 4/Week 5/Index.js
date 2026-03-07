@@ -1,4 +1,9 @@
-function sayHi() {
-  alert("Hi Cherina! Your JavaScript is working 😄");
-  console.log("Button clicked!");
+console.log("JS is working!");
+
+const name = "leo";
+let food = "apple";
+food = "pizza";
+
+function sayHello() {
+  alert("Hello " + name);
 }
