@@ -1,0 +1,40 @@
+.blueBtn {
+  background-color: white;
+  color: #4169E1;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border: 2px solid #4169E1; /* border width, style, color */
+  border-radius: 50px; /* rounded corners */
+  transition: 0.3s;
+}
+
+.blueBtn:hover {
+  background-color: #4169E1;
+  color: white;
+  border-color: white; /* change border color on hover */
+}
+
+.glowButton {
+  background-color: #111;
+  color: white;
+  padding: 12px 25px;
+  border: 2px solid cyan;
+  border-radius: 10px;
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.glowButton:hover {
+  box-shadow: 0 0 10px cyan, 0 0 20px cyan, 0 0 40px cyan;
+}
+
+#text {
+  font-size: 30px;
+  transition: transform 1s;
+}
+
+.spin {
+  transform: rotate(360deg);
+}
