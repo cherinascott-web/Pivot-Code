@@ -1,0 +1,31 @@
+body {
+  background-color: grey;
+  text-align: center;
+}
+.quiz-results h3,
+.quiz-results h4,
+.quiz-results h6 {
+margin: 40px 0;
+ }
+ /* Card style */
+.card {
+  background: white;
+  width: 300px;
+  margin: 20px auto;
+  padding: 10px 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.options {
+  text-align: left;
+  margin-top: 10px;
+}
+
+.submit-btn{
+  background-color: blue;
+  padding: 10px;
+  color: white;
+  border-radius: 10px;
+}
