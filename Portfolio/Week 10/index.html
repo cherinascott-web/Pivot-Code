@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Local Storage</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <input type="text" id="username" placeholder="Enter name">
+  <input type="password" id="password" placeholder="Enter password">
+  <button onclick="login()">Login</button>
+
+  <p id="result"></p>
+
+  <button onclick="logout()">Logout</button>
+ 
+  <script src="index.js"></script>
+  <script src="storage.js"></script>
+  <script src="object.js"></script>
+</body>
+
+</html>
+<!--  
+- user will type in a name and password,
+- we will store that in storage
+- if there logged in show text "Welcome"
+- when the page is refreshed check the storage and stay logged in
+- logout button (clear storage/erase memory)
+-->

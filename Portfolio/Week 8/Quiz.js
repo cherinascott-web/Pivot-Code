@@ -29,6 +29,20 @@ function submitQuiz() {
    if (qEight && qEight.value === "teeth") { score++; }
    if (qNine && qNine.value === "arms") { score++; }
    if (qTen && qTen.value === "head") { score++; }
+   let currentQuestionIndex = 0;
+const questions = document.querySelectorAll('.question-card');
+
+function showQuestion(index) {
+ // Hide all questions first
+ questions.forEach(q => q.classList.remove('active'));
+
+ // Show the specific question at the current index
+ questions[index].classList.add('active');
+}
+
+// Call this once to show the first question when the page loads
+showQuestion(currentQuestionIndex);
+
 
    // 4. Display the results to the HTML
    scoreElement.textContent = "Score: " + score;

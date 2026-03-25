@@ -17,6 +17,15 @@ margin: 40px 0;
   text-align: center;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
+.question-card {
+ display: none;
+}
+
+.question-card.active {
+ display: block; /* Only the card with the 'active' class will show */
+}
+
+Sent from my iPhone
 
 .options {
   text-align: left;
