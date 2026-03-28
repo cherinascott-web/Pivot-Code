@@ -1,17 +1,19 @@
+// We create the character object using curly braces {}
 const character = {
-    name: "Your Name Here", // This is your String
-    hp: 100,                // This is your Integer
-    attack: 15,             // This is your Integer
-    // ... add defense and your function here
-};
-const character = {
-    name: "Astra",
+    // String: text inside quotes
+    name: "Hero", 
+    
+    // Integers: whole numbers without quotes
     hp: 100,
-    // ... other stats ...
+    attack: 25,
+    defense: 15,
 
-    // This is your function (method)
+    // This is the function (method) that uses the object's data
     greet: function() {
-        console.log(`My name is ${this.name} and i have ${this.hp} health`);
+        // 'this' refers to the object we are currently inside
+        console.log("My name is " + this.name + " and i have " + this.hp + " health");
     }
 };
+
+// To actually see the result, we call the function like this:
 character.greet();
