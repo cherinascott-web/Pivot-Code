@@ -1,0 +1,110 @@
+/* General Page Setup */
+body {
+  background-color: #f8f9fa;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* --- PRODUCT GRID (Main Page) --- */
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.details-button {
+  background-color: #e6b800;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+}
+
+/* --- PRODUCT DETAILS (Single Page) --- */
+.details-layout {
+  display: flex;
+  gap: 50px;
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 20px;
+  text-align: left; /* Better for readability */
+}
+
+.main-detail-image {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 15px;
+}
+
+.thumbnail-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.small-gallery-img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #eee;
+  cursor: pointer;
+}
+
+/* Badges and Tags */
+.tag-badge {
+  background: #f0f0f0;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  margin-right: 8px;
+}
+
+/* Stock Status Logic */
+.stock-status {
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.stock-status.warning {
+  color: #ff0000;
+  background-color: #ffebeb;
+}
+
+.stock-status.available {
+  color: #2e7d32;
+  background-color: #f1f8e9;
+}

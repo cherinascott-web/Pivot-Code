@@ -1,0 +1,147 @@
+:root {
+  /* Theme Variables from your existing setup */
+  --text: #6b6375;
+  --text-h: #08060d;
+  --bg: #fff;
+  --bg-secondary: #eaeded; /* Amazon-style light gray background */
+  --border: #e5e4e7;
+  --code-bg: #f4f3ec;
+  --accent: #febd69; /* Amazon orange */
+  --accent-hover: #f3a847;
+  --shadow: rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+
+  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+
+  font: 18px/145% var(--sans);
+  letter-spacing: 0.18px;
+  color-scheme: light dark;
+  color: var(--text);
+  background: var(--bg-secondary);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+
+  @media (max-width: 1024px) {
+    font-size: 16px;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #9ca3af;
+    --text-h: #f3f4f6;
+    --bg: #16171d;
+    --bg-secondary: #0f1111;
+    --border: #2e303a;
+    --shadow: rgba(0, 0, 0, 0.4) 0 10px 15px -3px;
+  }
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-secondary);
+}
+
+#root {
+  max-width: 1400px;
+  margin: 0 auto;
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg); /* Main content area white */
+  border-inline: 1px solid var(--border);
+}
+
+/* --- Product Grid (Fixes vertical stacking) --- */
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 40px 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* --- Product Card (Amazon Style) --- */
+.card {
+  background-color: var(--bg);
+  border: 1px solid var(--border);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  transition: box-shadow 0.2s ease;
+  height: 100%;
+}
+
+.card:hover {
+  box-shadow: var(--shadow);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+
+/* Truncated Titles (Fixes warning from IMG_5510.jpg) */
+.card h3 {
+  font-size: 18px;
+  color: var(--text-h);
+  margin: 0 0 10px 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  line-clamp: 2; /* Standard property for compatibility */
+  overflow: hidden;
+}
+
+/* --- Task 1: Brand and Stock Styles --- */
+.brand-name {
+  font-size: 14px;
+  color: var(--text);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+.price {
+  font-size: 22px;
+  font-weight: bold;
+  color: #B12704; /* Amazon red price */
+  margin: 10px 0;
+}
+
+.stock-status {
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+/* Task 1: Color logic classes */
+.stock-status.warning {
+  color: #B12704; /* Red for Low Stock/Sold Out */
+}
+
+.stock-status.available {
+  color: #007600; /* Green for In Stock */
+}
+
+/* Button */
+.details-button {
+  background-color: var(--accent);
+  border: 1px solid #a88734;
+  border-radius: 8px;
+  padding: 10px;
+  cursor: pointer;
+  font-weight: 500;
+  width: 100%;
+}
+
+.details-button:hover {
+  background-color: var(--accent-hover);
+}
