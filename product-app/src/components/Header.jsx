@@ -27,10 +27,7 @@ function Header({ cart }) {
           Cherina's Shop
         </h2>
 
-        <p className="header-subtitle">
-          Soft beauty, curated with care
-        </p>
-
+        {/* Keep only one subtitle */}
         <nav className="header-nav">
           {/* Categories */}
           <div className="categories">
