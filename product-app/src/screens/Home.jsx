@@ -1,36 +1,37 @@
 import { useEffect, useState } from "react";
 import ProductCard from "../components/ProductCard.jsx";
-import ProductDetails from "../screens/Details.jsx"; // Import your new details component
 
-function Home() {
+function Home({ addToCartHandler }) {
   const [products, setProducts] = useState([]);
-  const [selectedProduct, setSelectedProduct] = useState(null); // Track the clicked product
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetch("https://dummyjson.com/products")
       .then((res) => res.json())
-      .then((data) => setProducts(data.products));
+      .then((data) => {
+        setProducts(data.products);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.log("Error fetching products:", error);
+        setLoading(false);
+      });
   }, []);
 
-  // If a product is selected, show the details page instead of the grid
-  if (selectedProduct) {
-    return (
-      <div>
-        <button onClick={() => setSelectedProduct(null)}>← Back to Store</button>
-        <ProductDetails product={selectedProduct} />
-      </div>
-    );
+  if (loading) {
+    return <p className="loading">Loading products...</p>;
   }
 
   return (
     <div className="app-container">
       <h1>Product Store</h1>
+
       <div className="products">
         {products.map((item) => (
-          <ProductCard 
-            key={item.id} 
-            product={item} 
-            onViewDetails={() => setSelectedProduct(item)} // Pass the click function
+          <ProductCard
+            key={item.id}
+            product={item}
+            addToCartHandler={addToCartHandler}
           />
         ))}
       </div>

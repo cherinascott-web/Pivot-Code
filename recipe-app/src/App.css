@@ -162,3 +162,19 @@ h2 {
 .card:hover .recipe-img {
   transform: scale(1.05);
 }
+.sort-btn {
+  padding: 8px 16px;
+  background-color: #2d3436;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  font-weight: 500;
+  transition: transform 0.2s;
+}
+
+.sort-btn:hover {
+  transform: scale(1.05);
+  background-color: #000;
+}
