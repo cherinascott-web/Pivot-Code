@@ -10,17 +10,23 @@ function Checkout({ cart = [] }) {
   const total = cart.reduce((sum, item) => sum + item.price, 0);
 
   function placeOrder() {
-    alert(`Thank you for your order, ${name}!`);
+    if (!name.trim() || !email.trim()) {
+      alert("Please enter your name and email before placing your order.");
+      return;
+    }
+
+    const orderNumber = Math.floor(1000 + Math.random() * 9000);
+
+    alert(
+      `Thank you for your order, ${name}!\nYour order number is #${orderNumber}.`
+    );
   }
 
   return (
     <div className="cart-page">
-
       <h1>Checkout</h1>
 
-      {/* CUSTOMER INFORMATION */}
       <div className="checkout-form">
-
         <input
           type="text"
           placeholder="Name"
@@ -34,14 +40,11 @@ function Checkout({ cart = [] }) {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
-
       </div>
 
-      {/* PAYMENT INFORMATION */}
       <h2>Payment Information</h2>
 
       <div className="checkout-form">
-
         <input
           type="text"
           placeholder="Card Number"
@@ -62,10 +65,8 @@ function Checkout({ cart = [] }) {
           value={cvv}
           onChange={(e) => setCvv(e.target.value)}
         />
-
       </div>
 
-      {/* ORDER SUMMARY */}
       <h2>Order Summary</h2>
 
       {cart.map((item, index) => (
@@ -75,22 +76,13 @@ function Checkout({ cart = [] }) {
         </div>
       ))}
 
-      {/* ITEM COUNT */}
       <p>Items: {cart.length}</p>
 
-      {/* TOTAL */}
-      <h2 className="cart-total">
-        Total: ${total.toFixed(2)}
-      </h2>
+      <h2 className="cart-total">Total: ${total.toFixed(2)}</h2>
 
-      {/* PLACE ORDER BUTTON */}
-      <button
-        className="checkout-btn"
-        onClick={placeOrder}
-      >
+      <button className="checkout-btn" onClick={placeOrder}>
         Place Order
       </button>
-
     </div>
   );
 }
