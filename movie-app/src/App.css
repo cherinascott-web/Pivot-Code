@@ -12,8 +12,16 @@ a {
 
 h1 {
   text-align: center;
-  font-size: 44px;
-  margin: 30px 0 15px;
+  font-size: 72px;
+  font-weight: 900;
+  color: #ffd700;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-shadow:
+    2px 2px 0 #000,
+    0 0 15px rgba(255, 215, 0, 0.9),
+    0 0 30px rgba(255, 215, 0, 0.7);
 }
 
 input {
@@ -61,4 +69,10 @@ button {
 .movie-card p {
   color: #cbd5e1;
   font-size: 14px;
+}
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+  padding: 20px;
 }

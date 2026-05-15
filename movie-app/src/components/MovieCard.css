@@ -1,0 +1,22 @@
+.movie-card-container {
+  position: relative;
+  min-width: 200px;
+}
+
+.movie-card-container img {
+  width: 100%;
+  display: block;
+  border-radius: 8px;
+}
+
+.heart-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: white;
+  border: none;
+  border-radius: 4px;
+  padding: 4px;
+  cursor: pointer;
+  font-size: 18px;
+}

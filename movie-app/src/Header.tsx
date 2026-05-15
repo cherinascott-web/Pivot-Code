@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 type HeaderProps = {
   searchQuery: string;
@@ -20,15 +20,15 @@ export default function Header({
     <header className="header">
       {/* Left: Logo */}
       <div className="logo">
-        <Link to="/">🎬 Movie App</Link>
+        <NavLink to="/">🎬 Movie App</NavLink>
       </div>
 
       {/* Middle: Navigation */}
       <nav className="nav-links">
-        <Link to="/">Home</Link>
-        <Link to="/now-showing">Now Showing</Link>
-        <Link to="/upcoming">Upcoming</Link>
-        <Link to="/about">About</Link>
+        <NavLink to="/">Home</NavLink>
+        <NavLink to="/now-playing">Now Playing</NavLink>
+        <NavLink to="/upcoming">Upcoming</NavLink>
+        <NavLink to="/about">About</NavLink>
       </nav>
 
       {/* Right: Search */}
@@ -45,9 +45,7 @@ export default function Header({
           }}
         />
 
-        <button onClick={handleSearch}>
-          Search
-        </button>
+        <button onClick={handleSearch}>Search</button>
       </div>
     </header>
   );

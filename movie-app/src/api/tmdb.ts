@@ -9,9 +9,30 @@ export async function getPopularMovies() {
 
   return data.results;
 }
+
 export async function searchMovies(query: string) {
   const response = await fetch(
     `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${query}`
+  );
+
+  const data = await response.json();
+
+  return data.results;
+}
+
+export async function getMovieDetails(id: string) {
+  const response = await fetch(
+    `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}`
+  );
+
+  const data = await response.json();
+
+  return data;
+}
+
+export async function getNowPlaying() {
+  const response = await fetch(
+    `https://api.themoviedb.org/3/movie/now_playing?api_key=${API_KEY}`
   );
 
   const data = await response.json();
