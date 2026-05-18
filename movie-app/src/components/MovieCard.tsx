@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import type { Movie } from "../types/movie";
+import "./MovieCard.css";
 
 const IMAGE_URL = import.meta.env.VITE_IMAGE_BASE_URL;
 
@@ -14,34 +15,23 @@ export default function MovieCard({
   favorites,
   toggleFavorite,
 }: Props) {
-  const isFavorite = favorites.some(
-    (fav) => fav.id === movie.id
-  );
+  const isFavorite = favorites.some((fav) => fav.id === movie.id);
 
   return (
-    <div className="movie-card">
-      {/* Heart Button */}
+    <div className="movie-card-container">
+      <Link to={`/movie/${movie.id}`}>
+        <img
+          src={`${IMAGE_URL}w200${movie.poster_path}`}
+          alt={movie.title}
+        />
+      </Link>
+
       <button
         className="heart-btn"
         onClick={() => toggleFavorite(movie)}
       >
         {isFavorite ? "❤️" : "🤍"}
       </button>
-
-      {/* Movie Details */}
-      <Link to={`/movie/${movie.id}`}>
-        <h2>{movie.title}</h2>
-
-        <p>{movie.overview}</p>
-
-        <img
-          src={`${IMAGE_URL}w200${movie.poster_path}`}
-          alt={movie.title}
-        />
-
-        <p>Release Date: {movie.release_date}</p>
-        <p>Rating: {movie.vote_average}</p>
-      </Link>
     </div>
   );
 }

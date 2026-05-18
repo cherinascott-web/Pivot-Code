@@ -26,9 +26,22 @@ export default function Header({
       {/* Middle: Navigation */}
       <nav className="nav-links">
         <NavLink to="/">Home</NavLink>
-        <NavLink to="/now-playing">Now Playing</NavLink>
-        <NavLink to="/upcoming">Upcoming</NavLink>
-        <NavLink to="/about">About</NavLink>
+
+        <NavLink to="/now-playing">
+          Now Playing
+        </NavLink>
+
+        <NavLink to="/upcoming">
+          Upcoming
+        </NavLink>
+
+        <NavLink to="/favorites">
+          Favorites
+        </NavLink>
+
+        <NavLink to="/about">
+          About
+        </NavLink>
       </nav>
 
       {/* Right: Search */}
@@ -45,7 +58,9 @@ export default function Header({
           }}
         />
 
-        <button onClick={handleSearch}>Search</button>
+        <button onClick={handleSearch}>
+          Search
+        </button>
       </div>
     </header>
   );
